@@ -12,7 +12,9 @@ export default function Navbar() {
         <Link href="../jobs">
           <span className="hidden md:inline-block text-sm mr-6">Browse jobs</span>
         </Link>
-        <span className="hidden md:inline-block text-sm">Featured companies</span>
+        <Link href="../companies">
+          <span className="hidden md:inline-block text-sm">Featured companies</span>
+        </Link>
       </div>
 
       <div>
