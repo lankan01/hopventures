@@ -1,40 +1,44 @@
 "use client"; // This is a client component 👈🏽
 
 import { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
+import { getDocs, collection } from "firebase/firestore";
 import { db } from "../services/firebase"; // 👈🏽 import the db from firebase.js
 
 export default function CompanyInfo() {
-  const [companyData, setCompanyData] = useState(null);
+  const [companies, setCompanies] = useState([]);
 
-  const fetchCompanyData = async () => {
-    const docRef = doc(db, "companies", "Vaxg6MGRZ12fMkImBDVj");
-    const docSnap = await getDoc(docRef);
-
-    if (docSnap.exists()) {
-      console.log("Document data:", docSnap.data());
-      setCompanyData(docSnap.data());
-    } else {
-      console.log("No such document!");
-    }
-  };
-
-  // Call the function when the component mounts (you can trigger it based on your requirements)
   useEffect(() => {
+    const fetchCompanyData = async () => {
+      const querySnapshot = await getDocs(collection(db, "companies"));
+
+      const companyData = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+
+      setCompanies(companyData);
+    };
+
     fetchCompanyData();
   }, []);
+
 
   return (
     <>
       <h1>Company Info</h1>
-      {companyData && (
-        <div>
-          <p>Name: {companyData.name}</p>
-          <p>Category: {companyData.category}</p>
-          <p>Founded: {companyData.year_founded}</p>
-          {/* Add more details as needed */}
-        </div>
+      {companies.length > 0 ? (
+        companies.map((company) => (
+          <div key={company.id}>
+            <p>Name: {company.name}</p>
+            <p>Category: {company.category}</p>
+            <p>Founded: {company.year_founded}</p>
+            <br />
+            {/* Add more details as needed */}
+          </div>
+        ))
+      ) : (
+        <p>Loading companies...</p>
       )}
     </>
-  )
+  );
 }
