@@ -65,3 +65,9 @@ body {
     font-size: 12px;
   }
 }
+
+a:-webkit-any-link {
+  text-decoration: none;
+  color: inherit;
+  width: inherit;
+}

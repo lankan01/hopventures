@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../services/firebase";                                      // 👈🏽 import the db from firebase.js
 import CompanyCard from "../components/company_card";
+import Link from "next/link";
 
 export default function CompanyInfo() {
   const [companies, setCompanies] = useState([]);
@@ -30,7 +31,7 @@ export default function CompanyInfo() {
       <div className="card-container">
         {companies.length > 0 ? (
           companies.map((company) => (
-            <CompanyCard key={company.id} company={company} />
+            <CompanyCard company={company} key={company.id}/>
           ))
         ) : (
           <p>Loading companies...</p>
