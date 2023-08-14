@@ -4,8 +4,8 @@ import Link from 'next/link'
 export default function CompanyCard({company}) {
 
   return (
-    <div className="bg-gray-900 rounded-lg p-4 shadow-md sm-card">
-      <Link href={`/companies/${company.id}`} key={company.id}>
+    <div className="bg-gray-900 rounded-lg p-4 shadow-md sm-card hover:translate-y-[-5px] transition-transform">
+      <Link href={`/companies/${company.name.toLowerCase()}`} key={company.name}>
         <div className="flex items-start mb-2">
           {/* Logo */}
           <div className="rounded-full w-10 h-10 sm:w-16 sm:h-16 overflow-hidden bg-white flex items-center justify-center">
