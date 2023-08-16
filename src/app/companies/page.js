@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../services/firebase";                                      // 👈🏽 import the db from firebase.js
-import CompanyCard from "../components/company_card";
-import Link from "next/link";
+import CompanyCard from "./company_card";
 
 export default function CompanyInfo() {
   const [companies, setCompanies] = useState([]);
