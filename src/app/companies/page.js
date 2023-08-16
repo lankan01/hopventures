@@ -2,23 +2,26 @@
 
 import { useEffect, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
-import { db } from "../services/firebase";                                      // 👈🏽 import the db from firebase.js
+import { db } from "../services/firebase";
 import CompanyCard from "./company_card";
 
 export default function CompanyInfo() {
-  const [companies, setCompanies] = useState([]);
+  const [companies, setCompanies] = useState([]); // Changed 'companies' to 'companies'
 
-  useEffect(() => {                                                             // 👈🏽 useEffect === run this once, then the page loads
-    const fetchCompanyData = async () => {                                      // async is used because we need to wait for the data to be returned
-      const queryCompanies = await getDocs(collection(db, "companies"));
+  useEffect(() => {
+    const fetchCompanyData = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "companies"))
 
-      const companyData = queryCompanies.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-      console.log(companyData);
+        const companyDataArray = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data()
+        }));
 
-      setCompanies(companyData);
+        setCompanies(companyDataArray); // Set the entire array of company data
+      } catch (error) {
+        console.error("Error fetching company data:", error);
+      }
     };
 
     fetchCompanyData();
@@ -27,13 +30,12 @@ export default function CompanyInfo() {
   return (
     <>
       <h1>Company Info</h1>
-      <div className="card-container">
+      <div className="flex flex-wrap justify-center">
         {companies.length > 0 ? (
           companies.map((company) => (
-            <CompanyCard company={company} key={company.id}/>
-          ))
-        ) : (
-          <p>Loading companies...</p>
+            <CompanyCard key={company.id} company={company} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4" />
+          )) ) : (
+          <p className="text-white">Loading...</p>
         )}
       </div>
     </>

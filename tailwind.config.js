@@ -28,7 +28,11 @@ module.exports = {
         '3o-gray': 'rgb(91,91,91)',
       },
       fontSize: {
-        'xxs': '9px', // Adjust the size as needed
+        'xxxs': '7.5px',
+        'xxs': '9px',
+      },
+      screens: {
+        'ipad': '860px',
       }
     },
   },

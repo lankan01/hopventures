@@ -16,7 +16,7 @@ export default function CompanyCard({company}) {
       <Link href={`/companies/${company.id}`} key={company.id}>
         <div className="flex items-start mb-2">
           {/* Logo */}
-          <div className="rounded-full w-10 h-10 sm:w-16 sm:h-16 overflow-hidden bg-white flex items-center justify-center">
+          <div className="rounded-full w-8 h-8 sm:w-16 sm:h-16 overflow-hidden bg-white flex items-center justify-center">
             {company.logo_url ? (
               <Image
                 src={company.logo_url}
@@ -26,7 +26,7 @@ export default function CompanyCard({company}) {
                 width={200}
               />
             ) : (
-              <div className="rounded-full w-10 h-10 sm:w-16 sm:h-16 bg-2o-pink flex items-start justify-center">
+              <div className="rounded-full w-8 h-8 sm:w-16 sm:h-16 overflow-hidden bg-2o-pink flex items-start justify-center">
                 <span className="text-white text-lg"></span>
               </div>
             )}
@@ -52,16 +52,16 @@ export default function CompanyCard({company}) {
         {/* Tags */}
         <div className="flex">
           <div className="rounded-full bg-2o-pink px-2 flex items-center justify-center w-1/3 mb-4 mr-2">
-            <span className="text-base mr-2 hidden sm:inline">📍</span>
-            <p className="text-2o-gray sm:text-xs text-xxs font-normal">{company.location}</p>
+            <span className="text-base mr-2 hidden ipad:inline">📍</span>
+            <p className="text-2o-gray sm:text-xs text-xxxs font-normal">{company.location}</p>
           </div>
           <div className="rounded-full bg-2o-pink px-2 flex items-center justify-center w-1/3 mb-4 mr-2">
-            <span className="text-base mr-2 hidden sm:inline">📈</span>
-            <p className="text-2o-gray sm:text-xs text-xxs font-normal">{company.series_stage}</p>
+            <span className="text-base mr-2 hidden ipad:inline">📈</span>
+            <p className="text-2o-gray sm:text-xs text-xxxs font-normal">{company.series_stage}</p>
           </div>
           <div className="rounded-full bg-2o-pink px-2 flex items-center justify-center w-1/3 mb-4">
-            <span className="text-base mr-2 hidden sm:inline">👯</span>
-            <p className="text-2o-gray sm:text-xs text-xxs font-normal">{company.size} ppl</p>
+            <span className="text-base mr-2 hidden ipad:inline">👯</span>
+            <p className="text-2o-gray sm:text-xs text-xxxs font-normal">{company.size} ppl</p>
           </div>
         </div>
       </Link>
