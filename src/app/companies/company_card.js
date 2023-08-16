@@ -3,6 +3,14 @@ import Link from 'next/link'
 
 export default function CompanyCard({company}) {
 
+  // Define the maximum length for the summary
+  const maxSummaryLength = 100;
+
+  // Check if the summary is longer than the maximum length
+  const truncatedSummary = company.summary.length > maxSummaryLength
+    ? company.summary.slice(0, maxSummaryLength) + '...'
+    : company.summary;
+
   return (
     <div className="bg-gray-900 rounded-lg p-4 shadow-md sm-card hover:translate-y-[-5px] transition-transform">
       <Link href={`/companies/${company.id}`} key={company.id}>
@@ -39,7 +47,7 @@ export default function CompanyCard({company}) {
         </div>
 
         {/* Summary */}
-        <p className="sm:text-sm text-xs italic text-gray-300 mb-4">{company.summary}</p>
+        <p className="sm:text-sm text-xs italic text-gray-300 mb-4">{truncatedSummary}</p>
 
         {/* Tags */}
         <div className="flex">

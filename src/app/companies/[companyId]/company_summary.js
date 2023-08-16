@@ -34,12 +34,12 @@ export default function CompanySummary({company}) {
           <p className="text-xxs sm:text-base">What we do: <span className="italic">{company.summary}</span></p>
 
           {/* Links to socials */}
-          <div className="flex justify-between pt-4 sm:pt-6">
-            <div className="rounded-full bg-2o-pink px-2 flex items-center justify-center w-1/3 mb-4 mr-2">
+          <div className="flex justify-center pt-4 sm:pt-6 w-full">
+            <div className="rounded-full bg-2o-pink px-2 flex items-center justify-center w-3/12 mb-4 mr-6 sm:mr-10">
               <span className="text-base mr-2 hidden sm:inline">🔗</span>
               <p className="text-2o-gray sm:text-sm text-xs font-medium">website</p>
             </div>
-            <div className="rounded-full bg-2o-pink px-2 flex items-center justify-center w-1/3 mb-4 mr-6">
+            <div className="rounded-full bg-2o-pink px-2 flex items-center justify-center w-3/12 mb-4 mr-6 ml-2 sm:ml-10">
               <span className="text-base mr-2 hidden sm:inline">🔗</span>
               <p className="text-2o-gray sm:text-sm text-xs font-medium">linkedin</p>
             </div>

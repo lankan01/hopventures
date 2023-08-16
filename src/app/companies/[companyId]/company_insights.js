@@ -6,13 +6,24 @@ export default function CompanyInsights() {
     <>
       <div className="flex flex-col items-center w-full mr-2">
         {/* Title of Company insights */}
-        <div className="flex justify-center text-xl rounded-2xl bg-2o-gray w-full">
+        <div className="flex justify-center text-xl rounded-2xl bg-3o-gray w-full">
           Company Insights
         </div>
         <div className="w-full mt-2">
           <SmCardFrame
             title="Card 1 Title"
             description="This is the description for Card 1."
+            backgroundColor={"bg-3o-gray"}
+          />
+          <SmCardFrame
+            title="Card 1 Title"
+            description="This is the description for Card 1."
+            backgroundColor={"bg-3o-gray"}
+          />
+          <SmCardFrame
+            title="Card 1 Title"
+            description="This is the description for Card 1."
+            backgroundColor={"bg-3o-gray"}
           />
         </div>
       </div>

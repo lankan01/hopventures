@@ -5,7 +5,7 @@ export default function IndustryInsights() {
 
   return(
     <>
-      <div className="flex flex-col items-center w-full ml-2">
+      <div className="flex flex-col items-center w-full mt-2 sm:mt-0">
         {/* Title of Industry insights */}
         <div className="flex justify-center text-xl rounded-2xl bg-2o-gray w-full">
           Industry Insights
@@ -15,7 +15,13 @@ export default function IndustryInsights() {
           <SmCardFrame
             title="Card 1 Title"
             description="This is the description for Card 1."
-            />
+            backgroundColor={"bg-2o-gray"}
+          />
+          <SmCardFrame
+            title="Card 1 Title"
+            description="This is the description for Card 1."
+            backgroundColor={"bg-2o-gray"}
+          />
         </div>
       </div>
     </>
