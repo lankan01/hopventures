@@ -3,12 +3,23 @@ import Image from 'next/image'
 import GoogleLogo from '../images/google-logo.png'
 import app from '../services/firebase'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { redirect } from 'next/navigation'
 
 export default function LoginPage() {
 
   const provider = new GoogleAuthProvider();
 
   const auth = getAuth();
+
+  const redirectIfUserIn = () => {
+    try {
+      if (auth.currentUser) {
+        window.location.href = "/";
+      }
+    } catch (error) {
+      console.error('Error redirecting:', error);
+    }
+  }
 
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
@@ -19,7 +30,7 @@ export default function LoginPage() {
       // The signed-in user info.
       const user = result.user;
       console.log('Signed in user:', user);
-      setIsOpen(false);
+      redirectIfUserIn();
       // IdP data available using getAdditionalUserInfo(result)
       // ...
     }).catch((error) => {
@@ -27,13 +38,11 @@ export default function LoginPage() {
       const errorCode = error.code;
       const errorMessage = error.message;
       // The email of the user's account used.
-      const email = error.customData.email;
       // The AuthCredential type that was used.
       const credential = GoogleAuthProvider.credentialFromError(error);
       console.error('Error signing in with Google:', error);
     });
   }
-
 
   return(
     <>
@@ -43,7 +52,7 @@ export default function LoginPage() {
 
           <div onClick={()=>signInWithGoogle()} className="flex bg-white text-black rounded-lg sm:w-2/4 w-full p-2 h-14 cursor-pointer">
             <Image src={GoogleLogo} alt="Google Logo" width={40} height={40} className="align-top w-10 h-10 p-1 sm:ml-2 mb-2 sm:mr-4 mr-2" />
-            <span className="pt-2">Continue with Google</span>
+            <span className="pt-2 text-sm sm:text-base">Continue with Google</span>
           </div>
 
         </div>

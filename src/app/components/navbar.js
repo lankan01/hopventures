@@ -1,7 +1,35 @@
+"use client"; // This is a client component 👈🏽
+
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Button from './button';
+import app from '../services/firebase'
+import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 
 export default function Navbar() {
+
+  const [user, setUser] = useState(null);
+  const auth = getAuth();
+
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    // Clean up the subscription on unmount
+    return () => unsubscribe();
+  }, []);
+
+  const handleLogout = async () => {
+    if (window.confirm('Are you sure you want to sign out?')) {
+      try {
+        await signOut(auth);
+      } catch (error) {
+        console.error('Error signing out:', error);
+      }
+    }
+  };
 
   return (
     <nav className="flex items-center justify-between flex-wrap bg-foreground-rgb-500 p-6">
@@ -19,9 +47,14 @@ export default function Navbar() {
 
       <div>
         <span className="hidden md:inline-block text-white font-semibold text-xl tracking-tight mr-8">Sign up</span>
-        <Link href="../login">
-          <Button className="hidden md:inline-block btn-primary cta-primary">Log in</Button>
-        </Link>
+          {user !== null ? (
+            <Button className="hidden md:inline-block btn-primary cta-primary" onClick={()=>handleLogout()}>Log out</Button>
+          ) : (
+            <Link href="../login">
+              <Button className="hidden md:inline-block btn-primary cta-primary">Log in</Button>
+            </Link>
+          )
+            }
       </div>
 
       {/* Drop down button on mobile view */}

@@ -33,6 +33,7 @@ module.exports = {
       },
       screens: {
         'ipad': '860px',
+        'sm': '660px',
       }
     },
   },
