@@ -19,7 +19,9 @@ export default function Navbar() {
 
       <div>
         <span className="hidden md:inline-block text-white font-semibold text-xl tracking-tight mr-8">Sign up</span>
-        <Button className="hidden md:inline-block btn-primary cta-primary">Log in</Button>
+        <Link href="../login">
+          <Button className="hidden md:inline-block btn-primary cta-primary">Log in</Button>
+        </Link>
       </div>
 
       {/* Drop down button on mobile view */}

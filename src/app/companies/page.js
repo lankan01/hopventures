@@ -30,7 +30,7 @@ export default function CompanyInfo() {
   return (
     <>
       <h1>Company Info</h1>
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap sm:justify-center justify-left">
         {companies.length > 0 ? (
           companies.map((company) => (
             <CompanyCard key={company.id} company={company} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4" />
