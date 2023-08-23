@@ -14,10 +14,26 @@ module.exports = {
       },
       backgroundColor: {
         '1o-pink': 'rgb(251,103,227)',
-        '2o-pink': 'rgb(255,211,248)'
+        '2o-pink': 'rgb(255,211,248)',
+        '1o-gray': 'rgb(3,7,18)',
+        '2o-gray': 'rgb(47,46,46)',
+        '3o-gray': 'rgb(91,91,91)',
+
+      },
+      colors: {
+        '1o-pink': 'rgb(251,103,227)',
+        '2o-pink': 'rgb(255,211,248)',
+        '1o-gray': 'rgb(3,7,18)',
+        '2o-gray': 'rgb(47,46,46)',
+        '3o-gray': 'rgb(91,91,91)',
       },
       fontSize: {
-        'xxs': '9px', // Adjust the size as needed
+        'xxxs': '7.5px',
+        'xxs': '9px',
+      },
+      screens: {
+        'ipad': '860px',
+        'sm': '660px',
       }
     },
   },

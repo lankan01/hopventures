@@ -45,7 +45,8 @@ body {
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
+  justify-content: center;
 }
 
 .sm-card {
@@ -53,15 +54,28 @@ body {
   padding: 10px;
   background-color: rgb(47,46,46);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: calc(33.33% - 10px); /* 3 in a row for larger screens */
+  width: calc(32.5% - 10px); /* 3 in a row for larger screens */
   margin: 8px;
   margin-bottom: 16px;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
   .sm-card {
-    width: calc(50% - 10px); /* 2 in a row for mobile views */
+    width: calc(50% - 8px); /* 2 in a row for mobile views */
     margin: 4px;
     font-size: 12px;
+    justify-content: left;
   }
+
+  .card-container {
+    justify-content: left;
+  }
+}
+
+
+a:-webkit-any-link {
+  text-decoration: none;
+  /* color: inherit;
+  width: inherit; */
 }
