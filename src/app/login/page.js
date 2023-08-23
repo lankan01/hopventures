@@ -11,6 +11,8 @@ export default function LoginPage() {
 
   const auth = getAuth();
 
+  const notify = () => toast("Wow so easy !");
+
   const redirectIfUserIn = () => {
     try {
       if (auth.currentUser) {

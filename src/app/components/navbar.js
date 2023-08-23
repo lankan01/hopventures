@@ -25,6 +25,7 @@ export default function Navbar() {
     if (window.confirm('Are you sure you want to sign out?')) {
       try {
         await signOut(auth);
+        localStorage.removeItem('notificationShown');
       } catch (error) {
         console.error('Error signing out:', error);
       }
