@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import FormDropdown from './formdropdown'; // Import the Dropdown component
+import FormDropdown from './skeletons/formdropdown'; // Import the Dropdown component
 
 const jobCategories = [
   'Cool Developer',

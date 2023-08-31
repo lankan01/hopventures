@@ -1,6 +1,7 @@
 "use client"
-import React from 'react';
-import FormDropdown from './formdropdown'; // Import the Dropdown component
+import React, { useState, useMemo } from 'react';
+import FormDropdown from './skeletons/formdropdown'; // Import the Dropdown component
+import countryList from 'react-select-country-list'
 
 const locations = [
   'Singapore',
@@ -8,13 +9,21 @@ const locations = [
 ];
 
 export default function LocationsDropdown() {
-  const handleLocationSelect = (category) => {
+  const [value, setValue] = useState('')
+  const options = useMemo(() => {
+    const countryData = countryList().getData();
+    const countryNames = countryData.map(country => country.label); // Assuming 'label' is the property containing the country name
+    return countryNames;
+  }, []);
+
+  const handleLocationSelect = (value) => {
     // Handle category selection logic here
+    setValue(value)
   };
 
   return (
     <FormDropdown
-      options={locations}
+      options={options}
       onSelect={handleLocationSelect}
       label="Location"
     />

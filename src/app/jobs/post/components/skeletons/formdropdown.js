@@ -50,15 +50,17 @@ export default function FormDropdown ({ options, onSelect, label }) {
         </label>
         {isDropdownVisible && (
           <>
-            {filteredOptions.map((option, index) => (
-              <div
-                key={index}
-                className="py-2 hover:text-1o-pink cursor-pointer sm:text-sm text-xs"
-                onClick={() => handleOptionSelect(option)}
-              >
-                {option}
-              </div>
-            ))}
+            <div className="max-h-40 overflow-y-auto">
+              {filteredOptions.map((option, index) => (
+                <div
+                  key={index}
+                  className="py-2 hover:text-1o-pink cursor-pointer sm:text-sm text-xs"
+                  onClick={() => handleOptionSelect(option)}
+                >
+                  {option}
+                </div>
+              ))}
+            </div>
           </>
         )}
       </div>
