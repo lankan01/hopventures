@@ -3,10 +3,22 @@ import React from 'react';
 import FormDropdown from './skeletons/formdropdown'; // Import the Dropdown component
 
 const jobCategories = [
-  'Cool Developer',
-  'Back-end Developer',
-  'UX Designer',
-  'Operations',
+  "🌈 Full-stack Developer",
+  "💻 Back-end Developer",
+  "🎨 UI/UX Designer",
+  "📱 Mobile App Developer",
+  "🖥️ Front-end Developer",
+  "🕵️‍♂️ Data Scientist",
+  "🤖 Machine Learning Engineer",
+  "🧠 AI Specialist",
+  "🔒 Cybersecurity Analyst",
+  "📊 Data Analyst",
+  "💾 Database Administrator",
+  "🚀 DevOps Engineer",
+  "🔍 QA Engineer",
+  "🛠️ Systems Administrator",
+  "🛡️ Cloud Engineer",
+  "🎮 Game Developer"
   // Add more job categories as needed
 ];
 

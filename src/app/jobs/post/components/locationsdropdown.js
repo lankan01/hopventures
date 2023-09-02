@@ -3,11 +3,6 @@ import React, { useState, useMemo } from 'react';
 import FormDropdown from './skeletons/formdropdown'; // Import the Dropdown component
 import countryList from 'react-select-country-list'
 
-const locations = [
-  'Singapore',
-  // Add more job categories as needed
-];
-
 export default function LocationsDropdown() {
   const [value, setValue] = useState('')
   const options = useMemo(() => {
@@ -25,7 +20,7 @@ export default function LocationsDropdown() {
     <FormDropdown
       options={options}
       onSelect={handleLocationSelect}
-      label="Location"
+      label="Office Location"
     />
   );
 };
