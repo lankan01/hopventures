@@ -1,11 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# HOP Ventures
+
+The Healthcare Opportunities Platform is a simple user-friendly interface for quick and easy access to information about health tech companies and to stay up to date about opportunities.
+
+I built this as a way for me to keep track of the companies I researched and was interested in.
+
+# Features
 
 ## User Auth
 
-
 https://github.com/lankan01/hopventures/assets/108777684/0bc18766-026e-4f85-b068-3cc6ff2f7c3c
 
+## Browse Companies - WIP
 
+![hopvuserauth](https://github.com/lankan01/hopventures/assets/108777684/4eea74e8-f53e-4c44-b526-9be88c295874)
+
+# Tech Stack
+- Nextjs
+- React
+- Firebase
+- Tailwind
 
 ## Getting Started
 
@@ -18,6 +31,9 @@ yarn dev
 # or
 pnpm dev
 ```
+# Licence
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -33,9 +49,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
