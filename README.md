@@ -12,7 +12,8 @@ https://github.com/lankan01/hopventures/assets/108777684/0bc18766-026e-4f85-b068
 
 ## Browse Companies - WIP
 
-![hopvuserauth](https://github.com/lankan01/hopventures/assets/108777684/4eea74e8-f53e-4c44-b526-9be88c295874)
+![hopvcompaniesbrowse](https://github.com/lankan01/hopventures/assets/108777684/ad9bf205-cd3f-434a-bee3-5c5c253b2de6)
+
 
 # Tech Stack
 - Nextjs
